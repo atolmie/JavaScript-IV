@@ -11,6 +11,7 @@ class Person {
         this.location = attributes.location;
         this.gender = attributes.gender;
     }
+    //Method
     speak() {
         return `Hello my name is ${this.name}, I am from ${this.location}`;
     }
@@ -57,6 +58,84 @@ class Instructor extends Person {
   * `PRAssignment` a method that receives a subject as an argument and logs out that the `student.name has submitted a PR for {subject}`
   * `sprintChallenge` similar to PRAssignment but logs out `student.name has begun sprint challenge on {subject}` */
 
-  class 
+  class Student extends Person {
+      constructor(studentAttributes) {
+          super(studentAttributes);
+          this.previousBackground = studentAttributes.previousBackground;
+          this.className = studentAttributes.className;
+          this.favSubjects = studentAttributes.favSubjects;
+      }
+
+      //Methods
+      listsSubjects() {
+        const favorites = this.favSubjects.join(', ');
+        return favorites;
+      }
+      PRAssignment(subject) {
+          return `${student.name} has submitted a PR for ${subject}`
+
+      }
+      sprintChallenge() {
+          return `${student.name} has begun sprint challenge on ${subject}`
+      }
+
+     }
+
+//      #### Project Manager
+
+// * Now that we have instructors and students, we'd be nowhere without our PM's
+// * ProjectManagers are extensions of Instructors
+// * ProjectManagers have the following unique props:
+//   * `gradClassName`: i.e. CS1
+//   * `favInstructor`: i.e. Sean
+// * ProjectManagers have the following Methods:
+//   * `standUp` a method that takes in a slack channel and logs `{name} announces to {channel}, @channel standy times!​​​​​
+//   * `debugsCode` a method that takes in a student object and a subject and logs out `{name} debugs {student.name}'s code on {subject}
+
+class ProjectManager extends  Instructor {
+    constructor(projectManagerAttributes) {
+        super(projectManagerAttributes);
+        this.gradClassName = projectManagerAttributes.gradClassName;
+        this.favInstructor = projectManagerAttributes.favInstructor;
+    }
+    //Methods
+    standUP() {
+        return `$(name) announces to  channel ${channel} @channel standy times!`
+    }
+    debugsCode(student, subject) {
+        return `${name} debugs ${student.name}'s code on ${subject}`
+    }
+}
+
+
+const dan = new Instructor({
+    name: "dan",
+    age: 30,
+    location: "FL",
+    gender: "Male",
+    favLanguage: "Python",
+
+});
+
+
+const anne = new Student({
+    name: "anne",
+    age: 30,
+    location: "MN",
+    gender: "Female",
+    favSubjects: ['programming', 'gym', 'nap']
+});
+
+console.log(anne.listsSubjects());
+
+console.log(dan.speak());
+console.log(dan.demo());
+console.log(anne.speak());
+
+
+
+
+
+
 
 

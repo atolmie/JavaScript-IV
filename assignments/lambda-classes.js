@@ -72,7 +72,7 @@ class Instructor extends Person {
         return favorites;
       }
       PRAssignment(subject) {
-          return `${student.name} has submitted a PR for ${subject}`
+          return `${this.name} has submitted a PR for ${subject}`
 
       }
       sprintChallenge() {
@@ -131,6 +131,7 @@ console.log(anne.listsSubjects());
 console.log(dan.speak());
 console.log(dan.demo());
 console.log(anne.speak());
+console.log(anne.PRAssignment("Spanish"));
 
 
 

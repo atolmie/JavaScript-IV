@@ -5,14 +5,14 @@
 * This method logs out a phrase `Hello my name is Fred, I am from Bedrock` where `name` and `location` are the object's own props*/
 
 class Person {
-    constructor(attributes){
-        this.newName = attributes.name;
-        this .newAge = attributes.age;
-        this.newLocation = attributes.location;
-        this.newGender = attributes.gender;
+    constructor(attributes) {
+        this.name = attributes.name;
+        this.age = attributes.age;
+        this.location = attributes.location;
+        this.gender = attributes.gender;
     }
     speak() {
-        return `${this.newName} says ${this.newLocation}`;
+        return `Hello my name is ${this.name}, I am from ${this.location}`;
     }
 }
 
@@ -28,6 +28,35 @@ class Person {
   * `demo` receives a `subject` string as an argument and logs out the phrase 'Today we are learning about {subject}' where subject is the param passed in.
   * `grade` receives a `student` object and a `subject` string as arguments and logs out '{student.name} receives a perfect score on {subject}' */
 
-  class Instructor {
-      
-  }
+class Instructor extends Person {
+    constructor(instructorAttributes) {
+        super(instructorAttributes);
+        this.specialty = instructorAttributes.specialty;
+        this.favLanguage = instructorAttributes.favLanguage;
+        this.catchPhrase = instructorAttributes.catchPhrase;
+    }
+    //Methods
+    demo(subject) {
+        return `Today we are learning about ${subject}`
+    }
+    grade(student, subject) {
+        return `${student.name} receives a perfect score on ${subject}`
+    }
+}
+
+/*#### Student
+
+* Now we need some students!
+* Student uses the same attributes that have been set up by Person
+* Student has the following unique props:
+  * `previousBackground` i.e. what the Student used to do before Lambda School
+  * `className` i.e. CS132
+  * `favSubjects`. i.e. an array of the student's favorite subjects ['Html', 'CSS', 'JavaScript']
+* Student has the following methods:
+  * `listsSubjects` a method that logs out all of the student's favoriteSubjects one by one.
+  * `PRAssignment` a method that receives a subject as an argument and logs out that the `student.name has submitted a PR for {subject}`
+  * `sprintChallenge` similar to PRAssignment but logs out `student.name has begun sprint challenge on {subject}` */
+
+  class 
+
+
